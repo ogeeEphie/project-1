@@ -1,17 +1,355 @@
-/** {
-
+html{
+    font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
 }
-*/
+
 body {
 	margin: 0px;
 }
 
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 20px;
+.innerDiv{
+    text-align: center;
+    margin-top: 5rem;
 }
 
-.navbar  h4 {
+.container{
+    max-width: 1190px;
+    margin: auto;
+}
 
-} 
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 1.725rem;
+    background-color: transparent;
+}
+
+.brand{
+    color: #fff;
+    margin: 0;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.bold{
+    font-weight: 600;
+}
+
+.card-body{
+    font-size: 16px;
+}
+
+.navbar.scroll .brand{
+    color: #3f3d41f7;
+}
+
+.navbar.scroll .link{
+    color: #3f3d41f7;
+}
+
+.navbar.scroll .menu .line{
+    background-color: black !important;
+}
+
+.navbar.scroll{
+    box-shadow: -5px -4px 9px #0000007a;
+    background-color: #fff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    width: -webkit-fill-available;
+    width: -moz-fill-available;
+    animation: fadeIn .25s forwards;
+    transition: .3s animation;
+}
+
+.brand > span {
+    color: purple;
+}
+
+.list{
+    list-style: none;
+}
+
+.nav-links .list{
+    display: flex;
+}
+
+.link{
+    margin: auto 7px;
+    padding: 0px 10px;
+    text-decoration: none;
+    color: #c796ff;
+    opacity: .5;
+    font-weight: 600;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.link:hover{
+    transition: .3s;
+    opacity: 1;
+}
+
+.header{
+    background-image: url('./assets/dog-image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: #9f3dc21c;
+}
+
+.hero{
+    height: 500px;
+    padding: 5rem 2rem 2rem 2rem;
+}
+
+.floats .float-left{
+    float: left;
+}
+
+.floats .float-right{
+    float: right;
+}
+
+
+.menu{
+    display: block;
+    list-style: none;
+    padding: 0px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.nav-toggle{
+    display: none;
+}
+
+.menu:hover .line:last-child,
+.menu:hover .line:first-child{
+    width: 12px;
+    transition: .3s;
+}
+
+.navbar.nav-open .menu .line:first-child{
+    transform: rotate(45deg);
+    transition: .3s transform;
+}
+
+.navbar.nav-open .menu .line:last-child{
+    transform: rotate(125deg);
+    transition: .3s transform;
+}
+
+.nav-toggle{
+    background: transparent;
+    border: none;
+    padding: 0px;
+}
+
+.navbar.nav-open .menu .line:nth-child(2){
+    display: none;
+    transition: .3s display;
+}
+
+.menu .line{
+    transition: .3s;
+    width: 30px;
+    margin: 5px 0px;
+    background-color: #fff;
+    padding: 1px;
+}
+
+.navbar.nav-open .menu:hover .line:first-child,
+.navbar.nav-open .menu:hover .line:last-child{
+    width: 30px;
+}
+
+.my-2{
+    margin-top: 2.725rem;
+    margin-bottom: 2.725rem;
+}
+
+.cta{
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 15px;
+    background-color: #2f0d34db;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    display: block;
+    margin: auto;
+    width: 270px;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.cta:hover{
+    background-color: transparent;
+    border-color: #2f0d34db;
+    transition: .4s;
+}
+
+.hero .content{
+    color:  white;
+    text-align: center;
+}
+
+.section{
+    padding: 5rem 2rem;
+}
+
+.section > .title {
+    text-align: center;
+    opacity: .85;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 38px;
+    display: block;
+}
+
+.section-content{
+    text-align: center;
+    font-size: 22px;
+}
+
+.mt-3{
+    margin-top: 5.2rem;
+}
+
+.section.animate{
+    animation: riseUp 1s forwards, fadeIn .86s forwards;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.col{
+    width: 100%;
+    max-width: 30%;
+}
+
+.card{
+    box-shadow: 4px 5px 16px 1px #03030314;
+    border-radius: 7px;
+    padding: 20px;
+}
+
+.footer{
+    background-color: #512da8;
+    padding: 4rem 2.5rem;
+    color: #fff;
+    background-image: url('./assets/cat-image-removebg.png');
+    background-repeat: no-repeat;
+    background-position-x: 123%;
+    background-size: contain;
+    background-position-y: 137px;
+}
+
+.footer .about{
+    max-width: 500px;
+    margin: 20px 0px;
+    font-size: 17px;
+}
+
+.footer .title{
+    font-size: 35px;
+    color:  #fff;
+}
+
+/* Animations */
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: .5;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes riseUp {
+    from{
+        transform: translateY(150px);
+    }   
+    to {
+        transform: translateY(0px);
+    }
+}
+
+
+@keyframes slideIn{
+    from{
+        transform: translateX(270px);
+    }to{
+        transform: translateX(0px);
+    }
+}
+
+/* Responsive Media Queries */
+
+
+/* 
+For mobile and tablet screens
+ - show the toggler button
+ - hide the links
+*/
+@media screen and (max-width: 765px){
+    .nav-toggle{
+        display: block;
+    }
+
+    .navbar .nav-links{
+        display: block;
+        position: fixed;
+        height: 100%;
+        z-index: 2000;
+        background-color: #fff;
+        right: -260px;
+        width: 250px;
+        top: 65px;
+    }
+
+
+    .navbar.nav-open .nav-links {
+        right: 0px;
+        box-shadow: 4px 10px 9px #0000007a;
+        animation: slideIn .4s forwards;
+    }
+
+    .navbar.nav-open .link{
+        color: #000;
+    }
+
+    .navbar.nav-open .nav-links .list{
+        display: block;
+        padding: 10px;
+    }
+
+    .navbar.nav-open .list li{
+        margin: 15px auto;
+        width: 100%;
+    }
+
+    .navbar.nav-open .link{
+        display: block;
+        padding: 15px;
+    }
+
+}
+
+@media screen and (max-width: 500px){
+    /* Add your responsive code here */
+}
